@@ -25,4 +25,5 @@ fs.readFile('./data.json', {encoding: 'utf8'}, (err,f) => console.log(color.gree
 request('https://jsonplaceholder.typicode.com/posts', (err, resp, body) => {
     const parsed = JSON.parse(body);
     parsed.forEach( (x) => console.log(x));
+    fs.writeFileSync('./newWebStuff.json', JSON.stringify(parsed));
 });
